@@ -1,0 +1,72 @@
+body * {
+	border-radius: 0px !important;
+}
+#titlearea {
+	border: none;
+}
+#titlearea > table {
+	width: 100%;
+}
+#projectalign {
+	padding-left: px;
+}
+#projectname {
+	padding: 0px;
+}
+#projectnumber {
+	font-family: "Segoe UI Light", 'Source Sans Pro', sans-serif;
+}
+#projectlogo img {
+	height: 64px;
+	width : auto;
+}
+#projectbrief {
+	float        : right;
+	width        : 720px;
+	padding      : 0px;
+  padding-right: 24px !important;
+}
+#projectname {
+	padding: 0px;
+}
+.title {
+	font-family: inherit;
+}
+#top {
+	padding      : 12px 24px;
+	border-bottom: 1px solid #5373B4;
+}
+.memtitle {
+  width           : calc(100% - 16px);
+	background-image: none;
+}
+#main-nav {
+	display: none;
+}
+#nav-tree {
+	padding-left: 12px;
+}
+#nav-sync {
+	display: none;
+}
+#side-nav a, #side-nav .arrow {
+	vertical-align: middle;
+	color         : #111;
+}
+#side-nav .selected .arrow {
+	color: #fff;
+}
+.mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
+	padding-bottom: 4px;
+	padding-top   : 4px;
+}
+code {
+	background-color: #f8f8f8;
+}
+.section.warning {
+	background-color: #ffbaba;
+}
+dl.todo {
+	border-left     : 6px solid;
+	border-color    : #00ac0d;
+}
