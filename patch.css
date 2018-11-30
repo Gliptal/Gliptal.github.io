@@ -1,3 +1,6 @@
+body {
+	overflow: hidden;
+}
 body * {
 	border-radius: 0px !important;
 }
@@ -8,7 +11,7 @@ body * {
 	width: 100%;
 }
 #projectalign {
-	padding-left: px;
+	padding-left: 0px;
 }
 #projectname {
 	padding: 0px;
@@ -24,37 +27,51 @@ body * {
 	float        : right;
 	width        : 720px;
 	padding      : 0px;
-  padding-right: 24px !important;
+	padding-right: 24px !important;
 }
 #projectname {
 	padding: 0px;
 }
 .title {
 	font-family: inherit;
+	font-size: 1.9rem;
 }
 #top {
 	padding      : 12px 24px;
 	border-bottom: 1px solid #5373B4;
 }
 .memtitle {
-  width           : calc(100% - 16px);
+  	width           : calc(100% - 16px);
 	background-image: none;
+}
+#doc-content {
+	border-left: 1px #5373b4 solid;
+	margin-left: 360px !important;
 }
 #main-nav {
 	display: none;
 }
-#nav-tree {
+#nav-tree .item {
 	padding-left: 12px;
 }
 #nav-sync {
-	display: none;
+	display: none !important;
+}
+#side-nav .ui-resizable-e {
+	visibility: hidden;
 }
 #side-nav a, #side-nav .arrow {
 	vertical-align: middle;
 	color         : #111;
 }
-#side-nav .selected .arrow {
-	color: #fff;
+#side-nav .selected {
+	background-color: #f0f4f8;
+}
+#side-nav .selected a {
+	color: #000;
+}
+#nav-tree .item:hover {
+	background-color: #f0f4f8;
 }
 .mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
 	padding-bottom: 4px;
@@ -67,6 +84,27 @@ code {
 	background-color: #ffbaba;
 }
 dl.todo {
-	border-left     : 6px solid;
-	border-color    : #00ac0d;
+	border-left : 6px solid;
+	border-color: #00ac0d;
+}
+::-webkit-scrollbar {
+	width : 12px !important;
+	height: 12px !important;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #ddd !important;
+	border          : 0px solid #000! important;
+	border-radius   : 0px !important;
+}
+::-webkit-scrollbar-track {
+	background-color: transparent !important;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #eee !important;
+}
+::-webkit-scrollbar-thumb:active {
+	background: #eee !important;
+}
+::-webkit-scrollbar-corner {
+	background: #ddd !important;
 }
