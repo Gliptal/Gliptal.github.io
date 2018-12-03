@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">sumo-integrator
-   &#160;<span id="projectnumber">0.3.0-alpha3+</span>
+   &#160;<span id="projectnumber">0.3.1-alpha3+201812031352</span>
    </div>
    <div id="projectbrief">sumo-integrator is a C++ static library that provides abstract integration tools geared towards connecting SUMO with a (any) graphic engine(s).</div>
   </td>
@@ -73,6 +73,9 @@ $(document).ready(function(){initNavTree('classsumointegrator_1_1_sumo_1_1_ego.h
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a07ea5fd0fafb10bf579fa92227108374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsumointegrator_1_1_sumo_1_1_ego.html#a07ea5fd0fafb10bf579fa92227108374">subscribe</a> (const std::vector&lt; int &gt; &amp;, const double, const double, const double)</td></tr>
+<tr class="memdesc:a07ea5fd0fafb10bf579fa92227108374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to the data feed of neighbouring vehicles.  <a href="#a07ea5fd0fafb10bf579fa92227108374">More...</a><br /></td></tr>
+<tr class="separator:a07ea5fd0fafb10bf579fa92227108374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8676a1a22d0fc3e11097ab3a6a8cbf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsumointegrator_1_1_sumo_1_1_ego.html#aa8676a1a22d0fc3e11097ab3a6a8cbf1">move</a> (const Position &amp;)</td></tr>
 <tr class="memdesc:aa8676a1a22d0fc3e11097ab3a6a8cbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move an ego entity.  <a href="#aa8676a1a22d0fc3e11097ab3a6a8cbf1">More...</a><br /></td></tr>
 <tr class="separator:aa8676a1a22d0fc3e11097ab3a6a8cbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,15 +95,71 @@ Public Member Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2018-11-26 </dd>
 <dd>
 2018-11-29 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.3.0-alpha3 </dd>
+<dl class="section version"><dt>Version</dt><dd>0.3.1-alpha3 </dd>
 <dd>
-2 </dd></dl>
+3 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (C) (2018) AnteMotion</dd></dl>
 <p>Handles the ego entity within SUMO's simulation. It is assumed only one "main" ego entity exists, although it is possible to alter the state of other entities as if they were ego entities themselves.</p>
 <dl class="section note"><dt>Note</dt><dd>May only be accessed as a pointer member class of <code><a class="el" href="classsumointegrator_1_1_sumo.html" title="TraCIAPI client. ">sumointegrator::Sumo</a></code> (<code><a class="el" href="classsumointegrator_1_1_sumo.html#aa96e389f4304fe04d035ccc2a333e4c6" title="Pointer to the Ego domain. ">sumointegrator::Sumo::ego</a></code>). </dd></dl>
 </div>
 <p>Inherits sumointegrator::Sumo::Concern.</p>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a07ea5fd0fafb10bf579fa92227108374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ea5fd0fafb10bf579fa92227108374">&#9670;&nbsp;</a></span>subscribe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sumointegrator::Sumo::Ego::subscribe </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subscribe to the data feed of neighbouring vehicles. </p>
+<p>Data is received from only those vehicles within a circle cantered in the ego vehicle and with the given radius. Once subscribed to a data feed, on each SUMO simulation tick that data is made available through <code>poll()</code>.</p>
+<dl class="section user"><dt>Units</dt><dd><code>start</code> seconds (s)<br />
+<code>end</code> seconds (s)<br />
+'radius' meters (m)</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>The requested data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>The time the subscription starts taking effect. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>The time the subscription stops taking effect. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">radius</td><td>The radius of the circle area.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Debug</dt><dd><code>DEBUG_INFO</code> - Subscription target. <code>DEBUG_DATA</code> - Number of vehicles in the radius. </dd></dl>
+
+</div>
+</div>
 <a id="aa8676a1a22d0fc3e11097ab3a6a8cbf1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8676a1a22d0fc3e11097ab3a6a8cbf1">&#9670;&nbsp;</a></span>move() <span class="overload">[1/2]</span></h2>
 
@@ -233,7 +292,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>sumointegrator</b></li><li class="navelem"><a class="el" href="classsumointegrator_1_1_sumo.html">Sumo</a></li><li class="navelem"><a class="el" href="classsumointegrator_1_1_sumo_1_1_ego.html">Ego</a></li>
-    <li class="footer">Generated on Fri Nov 30 2018 11:22:43 for sumo-integrator by
+    <li class="footer">Generated on Mon Dec 3 2018 14:01:14 for sumo-integrator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>
